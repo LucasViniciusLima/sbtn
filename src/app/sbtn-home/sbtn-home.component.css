@@ -1,0 +1,58 @@
+.btn-home{
+    padding: 9px 15px;
+    border-radius: 10px;
+    background-color: transparent;
+    background-image: linear-gradient(246deg, #ff4e00, #ff8c00);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .title-home{
+    font-size: 38px;
+    line-height: 44px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ffa434;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .section-home{
+    background-color: #000;
+    border-bottom: 4px solid #ff8c00;
+    color: #FFF;
+    text-align: center;
+  }
+  .logo-home{
+    width: 400px;
+  }
+  .container-center{
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .coluna-preencher{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  @media only screen and (max-width: 750px) {
+    .logo-home{
+      width: 255px;
+    }
+    .container-center{
+      padding: 0px 13px;
+    }
+    .title-home{
+      font-size: 34px;
+    line-height: 36px;
+    font-weight: 680;
+    }
+  }
