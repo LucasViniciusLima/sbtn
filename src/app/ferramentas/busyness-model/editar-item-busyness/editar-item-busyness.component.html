@@ -1,0 +1,22 @@
+<div class="container py-md-4">
+    <div class="card border-success mb-">
+        <div class="row card-body text-success">
+            <div class="col-12">
+                <a class="bi bi-arrow-left-circle" style="font-size: 3rem; text-decoration: none; color:green;"></a>
+            </div>
+            <div class="col-5">                
+                <img [src]="item.icone" alt="icone">
+            </div>
+            <div class="col-7">
+                <h3>{{ bloco.titulo }}</h3>
+                <h1 class="card-title">{{ item.titulo }}</h1>
+                <div class="card-text">{{ item.descricao }}</div>
+                <ul>
+                    <li *ngFor="let subitem of item.subitens">{{ subitem }}</li>
+                </ul>
+                <input type="text">
+                <button class="btn btn-success">adicionar</button>
+            </div>
+        </div>
+    </div>
+</div>

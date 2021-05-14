@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component,  OnInit } from '@angular/core';
 
 @Component({
   selector: 'busyness-model',
@@ -8,21 +7,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [  ]
 })
 export class BusynessModelComponent implements OnInit {
-
-  itens = new Array<any>(9);
   
   constructor() { 
-    for(let i=0; i<this.itens.length; i++){
-      this.itens[i] = new Array<string>();
-    }
   }
 
   ngOnInit(): void {
   }
 
-  adicionarTexto(input: any, id){
-    if(input.value.length == 0 || input.value == ' ') return;
-    this.itens[id].push(input.value);
-    input.value = '';    
-  }
 }

@@ -1,0 +1,170 @@
+<div class="container py-md-4" style="color: #fff;">
+    <div class="row">
+        <div class="col-md-5 pt-1 pt-md-2" style="background-color: #719639;">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center">COMO?</h3>
+                </div>
+                <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #7da63c;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3 col-md-12">
+                            <img class="busynessIcon" src="../../../assets/parceria.svg" alt="">
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h4>Parcerias Principais</h4>
+                            <div>Rede de Fornecedores e parceiros que ajudam a sua empresa funcionar.</div>
+                            <ul *ngIf="itens[0].length > 0">
+                                <li *ngFor="let item of itens[0]">{{item}}</li>
+                            </ul>
+                            <div>
+                                <button type="button"
+                                    class="mb-md-3 mt-2 float-md-end btn btn-outline-light">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #88b443;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3 col-md-12">
+                            <img class="busynessIcon" src="../../../assets/tarefa.svg" alt="">
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h4>Atividades Principais</h4>
+                            <div>Ações importantes que sua empresa deve realizar para faze seu Modelo de Negócios
+                                Funcionar
+                            </div>
+                            <ul *ngIf="itens[1].length > 0">
+                                <li *ngFor="let item of itens[1]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 py-2 px-4 py-md-3">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3">
+                            <img class="busynessIcon" src="../../../assets/grafico-de-barras.svg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <h4>Recursos Principais</h4>
+                            <div>Recursos mais importantes exigidos para fazer o Modelo de Negócios funcionar</div>
+                            <ul *ngIf="itens[2].length > 0">
+                                <li *ngFor="let item of itens[2]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 pt-1 pt-md-2" style="background-color: #92342d">
+            <div class="row h-100">
+                <div class="col-12">
+                    <h3 class="text-center">O QUE?</h3>
+                </div>
+                <div class="py-2 px-3 h-100" style="background-color: #af3d35;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3 col-md-12">
+                            <img class="busynessIcon" src="../../../assets/valor.svg" alt="">
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h4>Proposta de Valor</h4>
+                            <div>Qual seu pacote de produtos e serviços e o valor que ele possui para os clientes</div>
+                            <ul *ngIf="itens[3].length > 0">
+                                <li *ngFor="let item of itens[3]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 pt-1 pt-md-2" style="background-color: #0772a6">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center">PARA QUEM?</h3>
+                </div>
+                <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #0491d8;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3 col-md-12">
+                            <img class="busynessIcon" src="../../../assets/agente-de-atendimento-ao-cliente.svg" alt="">
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h4>Relacionamento com o Cliente</h4>
+                            <div>Tipos de relação que uma empresa estabelece com Clientes para conquistá-los e mantê-los
+                            </div>
+                            <ul *ngIf="itens[4].length > 0">
+                                <li *ngFor="let item of itens[4]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #03a2dc;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3 col-md-12">
+                            <img class="busynessIcon" src="../../../assets/midia-social.svg" alt="">
+                        </div>
+                        <div class="col-9 col-md-12">
+                            <h4>Canais</h4>
+                            <div>Como sua empresa se comunica e alcança seus Clientes para entregar sua Proposta de
+                                Valor
+                            </div>
+                            <ul *ngIf="itens[5].length > 0">
+                                <li *ngFor="let item of itens[5]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 py-2 px-4 py-md-3">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3">
+                            <img class="busynessIcon" src="../../../assets/engajamento-da-marca.svg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <h4>Segmento de Clientes</h4>
+                            <div>Quem são os Clientes que você pretende atender? Eles tem um perfil específico? Como
+                                eles estão
+                                agrupados? Onde estão localizados?
+                            </div>
+                            <ul *ngIf="itens[6].length > 0">
+                                <li *ngFor="let item of itens[6]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 pt-1 pt-md-2" style="background-color: #fd9f2e">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center">QUANTO?</h3>
+                </div>
+                <div class="col-md-6 py-2 px-4 py-md-4" style="background-color: #f6aa5c;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3">
+                            <img class="busynessIcon" src="../../../assets/aplicativo-de-planilha.svg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <h4>Estruturas de Custos</h4>
+                            <div>Todos os custos envolvidos na operação do seu Modelo de Negócios</div>
+                            <ul *ngIf="itens[7].length > 0">
+                                <li *ngFor="let item of itens[7]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 py-2 px-4 py-md-4" style="background-color: #fdba62;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-3">
+                            <img class="busynessIcon" src="../../../assets/bolsa-de-dinheiro.svg" alt="">
+                        </div>
+                        <div class="col-9">
+                            <h4>Receitas</h4>
+                            <div>Dinheiro que a empresa gera Quanto e como você vai receber dos clientes?</div>
+                            <ul *ngIf="itens[8].length > 0">
+                                <li *ngFor="let item of itens[8]">{{item}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
