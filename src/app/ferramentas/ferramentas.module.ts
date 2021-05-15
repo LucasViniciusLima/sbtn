@@ -5,13 +5,18 @@ import { EditarItemBusynessComponent } from './busyness-model/editar-item-busyne
 import { HomeComponent } from './busyness-model/home/home.component';
 
 import { routing } from  '../app.routing';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     BusynessModelComponent,
     EditarItemBusynessComponent,
-    HomeComponent
+    HomeComponent,
   ],
-  imports: [ CommonModule, routing ]
+  imports: [ 
+    CommonModule,
+    routing,
+    FormsModule
+   ]
 })
 export class FerramentasModule { }

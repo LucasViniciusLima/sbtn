@@ -1,21 +1,26 @@
-<div class="container py-md-4">
-    <div class="card border-success mb-">
-        <div class="row card-body text-success">
-            <div class="col-12">
-                <a class="bi bi-arrow-left-circle" style="font-size: 3rem; text-decoration: none; color:green;"></a>
-            </div>
-            <div class="col-5">                
-                <img [src]="item.icone" alt="icone">
-            </div>
-            <div class="col-7">
-                <h3>{{ bloco.titulo }}</h3>
-                <h1 class="card-title">{{ item.titulo }}</h1>
-                <div class="card-text">{{ item.descricao }}</div>
-                <ul>
-                    <li *ngFor="let subitem of item.subitens">{{ subitem }}</li>
-                </ul>
-                <input type="text">
-                <button class="btn btn-success">adicionar</button>
+<div class="bg-dark  min-vh-100">
+    <div class="container mx-md-5 py-3 py-md-4 px-md-5">
+        <div [class]="getBorder()">
+            <div class="row card-body" [class]="getFont()">
+                <div class="col-12">
+                    <a class="bi bi-arrow-left-circle" [class]="getFont()"
+                        style="font-size: 3rem; text-decoration: none;"></a>
+                </div>
+                <div class="col-md-3">
+                    <img class="busynessItemEdit" [src]="getIcon()" alt="icone">
+                </div>
+                <div class="col-md-9 px-4 px-md-5">
+                    <h3>{{ bloco.titulo }}</h3>
+                    <h1 class="card-title">{{ item.titulo }}</h1>
+                    <div class="card-text">{{ item.descricao }}</div>
+                    <ul>
+                        <li *ngFor="let subitem of item.subitens">{{ subitem }}</li>
+                    </ul>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Descreva a ação ou item aqui." [(ngModel)]="formValue">
+                        <button [class]="getButton()" type="button" (click)="addSubItem()">Adicionar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

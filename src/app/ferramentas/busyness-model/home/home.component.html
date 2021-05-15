@@ -8,48 +8,48 @@
                 <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #7da63c;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3 col-md-12">
-                            <img class="busynessIcon" src="../../../assets/parceria.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(0)" alt="">
                         </div>
                         <div class="col-9 col-md-12">
-                            <h4>Parcerias Principais</h4>
-                            <div>Rede de Fornecedores e parceiros que ajudam a sua empresa funcionar.</div>
-                            <ul *ngIf="itens[0].length > 0">
-                                <li *ngFor="let item of itens[0]">{{item}}</li>
+                            <h4>{{ getTitulo(0) }}</h4>
+                            <div>{{ getDescricao(0) }}</div>
+                            <ul *ngIf="getSubItens(0).length > 0">
+                                <li *ngFor="let obj of getSubItens(0)"> {{ obj }}</li>
                             </ul>
-                            <div>
-                                <button type="button"
-                                    class="mb-md-3 mt-2 float-md-end btn btn-outline-light">Adicionar</button>
-                            </div>
+                            <button type="button"
+                                class="mb-md-3 mt-2 float-md-end btn btn-outline-light" (click)="btnAction(0)">Adicionar</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #88b443;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3 col-md-12">
-                            <img class="busynessIcon" src="../../../assets/tarefa.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(1)" alt="">
                         </div>
                         <div class="col-9 col-md-12">
-                            <h4>Atividades Principais</h4>
-                            <div>Ações importantes que sua empresa deve realizar para faze seu Modelo de Negócios
-                                Funcionar
-                            </div>
-                            <ul *ngIf="itens[1].length > 0">
-                                <li *ngFor="let item of itens[1]">{{item}}</li>
+                            <h4>{{ getTitulo(1) }}</h4>
+                            <div>{{ getDescricao(1) }}</div>
+                            <ul *ngIf="getSubItens(1).length > 0">
+                                <li *ngFor="let obj of getSubItens(1)"> {{ obj }}</li>
                             </ul>
+                            <button type="button"
+                                class="mb-md-3 mt-2 float-md-end btn btn-outline-light" (click)="btnAction(1)">Adicionar</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 py-2 px-4 py-md-3">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3">
-                            <img class="busynessIcon" src="../../../assets/grafico-de-barras.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(2)" alt="">
                         </div>
                         <div class="col-9">
-                            <h4>Recursos Principais</h4>
-                            <div>Recursos mais importantes exigidos para fazer o Modelo de Negócios funcionar</div>
-                            <ul *ngIf="itens[2].length > 0">
-                                <li *ngFor="let item of itens[2]">{{item}}</li>
+                            <h4>{{ getTitulo(2) }}</h4>
+                            <div>{{ getDescricao(2) }}</div>
+                            <ul *ngIf="getSubItens(2).length > 0">
+                                <li *ngFor="let obj of getSubItens(2)"> {{ obj }}</li>
                             </ul>
+                            <button type="button"
+                                class="mb-md-3 mt-2 float-md-end btn btn-outline-light" (click)="btnAction(2)">Adicionar</button>
                         </div>
                     </div>
                 </div>
@@ -63,14 +63,15 @@
                 <div class="py-2 px-3 h-100" style="background-color: #af3d35;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3 col-md-12">
-                            <img class="busynessIcon" src="../../../assets/valor.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(3)" alt="">
                         </div>
                         <div class="col-9 col-md-12">
-                            <h4>Proposta de Valor</h4>
-                            <div>Qual seu pacote de produtos e serviços e o valor que ele possui para os clientes</div>
-                            <ul *ngIf="itens[3].length > 0">
-                                <li *ngFor="let item of itens[3]">{{item}}</li>
+                            <h4>{{ getTitulo(3) }}</h4>
+                            <div>{{ getDescricao(3) }}</div>
+                            <ul *ngIf="getSubItens(3).length > 0">
+                                <li *ngFor="let obj of getSubItens(3)"> {{ obj }}</li>
                             </ul>
+                            <button type="button" class="mb-md-3 mt-2 btn btn-outline-light" (click)="btnAction(3)">Adicionar</button>
                         </div>
                     </div>
                 </div>
@@ -84,83 +85,82 @@
                 <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #0491d8;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3 col-md-12">
-                            <img class="busynessIcon" src="../../../assets/agente-de-atendimento-ao-cliente.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(4)" alt="">
                         </div>
                         <div class="col-9 col-md-12">
-                            <h4>Relacionamento com o Cliente</h4>
-                            <div>Tipos de relação que uma empresa estabelece com Clientes para conquistá-los e mantê-los
-                            </div>
-                            <ul *ngIf="itens[4].length > 0">
-                                <li *ngFor="let item of itens[4]">{{item}}</li>
+                            <h4>{{ getTitulo(4) }}</h4>
+                            <div>{{ getDescricao(4) }}</div>
+                            <ul *ngIf="getSubItens(4).length > 0">
+                                <li *ngFor="let obj of getSubItens(4)"> {{ obj }}</li>
                             </ul>
+                            <button type="button" class="mb-md-3 mt-2 btn btn-outline-light" (click)="btnAction(4)">Adicionar</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 py-2 px-4 py-md-1" style="background-color: #03a2dc;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3 col-md-12">
-                            <img class="busynessIcon" src="../../../assets/midia-social.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(5)" alt="">
                         </div>
                         <div class="col-9 col-md-12">
-                            <h4>Canais</h4>
-                            <div>Como sua empresa se comunica e alcança seus Clientes para entregar sua Proposta de
-                                Valor
-                            </div>
-                            <ul *ngIf="itens[5].length > 0">
-                                <li *ngFor="let item of itens[5]">{{item}}</li>
+                            <h4>{{ getTitulo(5) }}</h4>
+                            <div>{{ getDescricao(5) }}</div>
+                            <ul *ngIf="getSubItens(5).length > 0">
+                                <li *ngFor="let obj of getSubItens(5)"> {{ obj }}</li>
                             </ul>
+                            <button type="button" class="mb-md-3 mt-2 btn btn-outline-light" (click)="btnAction(5)">Adicionar</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 py-2 px-4 py-md-3">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3">
-                            <img class="busynessIcon" src="../../../assets/engajamento-da-marca.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(6)" alt="">
                         </div>
                         <div class="col-9">
-                            <h4>Segmento de Clientes</h4>
-                            <div>Quem são os Clientes que você pretende atender? Eles tem um perfil específico? Como
-                                eles estão
-                                agrupados? Onde estão localizados?
-                            </div>
-                            <ul *ngIf="itens[6].length > 0">
-                                <li *ngFor="let item of itens[6]">{{item}}</li>
+                            <h4>{{ getTitulo(6) }}</h4>
+                            <div>{{ getDescricao(6) }}</div>
+                            <ul *ngIf="getSubItens(6).length > 0">
+                                <li *ngFor="let obj of getSubItens(6)"> {{ obj }}</li>
                             </ul>
+                            <button type="button" class="mb-md-3 mt-2 btn btn-outline-light" (click)="btnAction(6)">Adicionar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-12 pt-1 pt-md-2" style="background-color: #fd9f2e">
+        <div class="col-md-12 pt-1 pt-md-2" style="background-color: #a16b24">
             <div class="row">
                 <div class="col-12">
                     <h3 class="text-center">QUANTO?</h3>
                 </div>
-                <div class="col-md-6 py-2 px-4 py-md-4" style="background-color: #f6aa5c;">
+                <div class="col-md-6 py-2 px-4 py-md-4" style="background-color: #fd9f2e;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3">
-                            <img class="busynessIcon" src="../../../assets/aplicativo-de-planilha.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(7)" alt="">
                         </div>
                         <div class="col-9">
-                            <h4>Estruturas de Custos</h4>
-                            <div>Todos os custos envolvidos na operação do seu Modelo de Negócios</div>
-                            <ul *ngIf="itens[7].length > 0">
-                                <li *ngFor="let item of itens[7]">{{item}}</li>
+                            <h4>{{ getTitulo(7) }}</h4>
+                            <div>{{ getDescricao(7) }}</div>
+                            <ul *ngIf="getSubItens(7).length > 0">
+                                <li *ngFor="let obj of getSubItens(7)"> {{ obj }}</li>
                             </ul>
+                            <button type="button" class="mb-md-3 mt-2 btn btn-outline-light" (click)="btnAction(7)">Adicionar</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 py-2 px-4 py-md-4" style="background-color: #fdba62;">
+                <div class="col-md-6 py-2 px-4 py-md-4" style="background-color: #d47800;">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-3">
-                            <img class="busynessIcon" src="../../../assets/bolsa-de-dinheiro.svg" alt="">
+                            <img class="busynessIcon" [src]="getIcon(8)" alt="">
                         </div>
                         <div class="col-9">
-                            <h4>Receitas</h4>
-                            <div>Dinheiro que a empresa gera Quanto e como você vai receber dos clientes?</div>
-                            <ul *ngIf="itens[8].length > 0">
-                                <li *ngFor="let item of itens[8]">{{item}}</li>
+                            <h4>{{ getTitulo(8) }}</h4>
+                            <div>{{ getDescricao(8) }}</div>
+                            <ul *ngIf="getSubItens(8).length > 0">
+                                <li *ngFor="let obj of getSubItens(8)"> {{ obj }}</li>
                             </ul>
+                            <button type="button" class="mb-md-3 mt-2 btn btn-outline-light" (click)="btnAction(8)">Adicionar</button>
                         </div>
                     </div>
                 </div>

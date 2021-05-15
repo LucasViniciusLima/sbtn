@@ -17,7 +17,7 @@ import { FerramentasModule } from './ferramentas/ferramentas.module';
     BrowserModule,
     routing,
     CommonModule,
-    FerramentasModule
+    FerramentasModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]
