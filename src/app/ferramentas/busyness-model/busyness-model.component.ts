@@ -7,7 +7,7 @@ import { Component,  OnInit } from '@angular/core';
   animations: [  ]
 })
 export class BusynessModelComponent implements OnInit {
-  
+
   constructor() { 
   }
 

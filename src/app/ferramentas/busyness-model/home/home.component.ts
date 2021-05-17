@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'business-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -77,8 +77,15 @@ export class HomeComponent implements OnInit {
   ];
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router) {  
+    console.log(this.router.getCurrentNavigation());
 
+    if(this.router.getCurrentNavigation()?.extras.state?.subItens.length > 0){
+      console.log("não é null");
+      var nav = this.router.getCurrentNavigation();
+      var routeId = nav.extras.state.id;
+      this.itens[routeId].subitens = nav.extras.state.subItens;      
+    } else console.log("null");
   }
 
   ngOnInit(): void {
@@ -103,7 +110,7 @@ export class HomeComponent implements OnInit {
     var item = this.itens[id];
     var bloco = this.getBlockById(id);
     this.router.navigateByUrl('/businessmodel/editar', {
-      state: { item: item, bloco: bloco }
+      state: { id: id, item: item, bloco: bloco }
     });    
   }
 

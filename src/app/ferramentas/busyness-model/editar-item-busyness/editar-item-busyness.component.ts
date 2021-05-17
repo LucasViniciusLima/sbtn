@@ -21,9 +21,11 @@ export class EditarItemBusynessComponent implements OnInit {
   };
 
   formValue: string = '';
+  id: number;
 
   constructor(private route: Router) {
     const nav = this.route.getCurrentNavigation();
+    this.id = nav.extras.state.id;
     this.bloco = nav.extras.state.bloco;
     this.item = nav.extras.state.item;
    }
@@ -46,6 +48,11 @@ export class EditarItemBusynessComponent implements OnInit {
   addSubItem(){
     this.item.subitens.push(this.formValue);
     this.formValue = '';
+  }
+  backAndSave(){
+    this.route.navigateByUrl('/businessmodel', {
+      state: { id: this.id, subItens: this.item.subitens }
+    });    
   }
 
 }
