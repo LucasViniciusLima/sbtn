@@ -142,5 +142,7 @@ export class HomeComponent implements OnInit {
     if (id < 7) return this.blocos[2];
     else return this.blocos[3];
   }
-
+  imprimir(){
+    window.print();
+  }
 }
