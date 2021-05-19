@@ -80,10 +80,13 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private router: Router, private store: StoreService) {
+    const nav = this.router.getCurrentNavigation();
+    if(nav.extras.state != undefined) this.email = nav.extras.state.email;
+    else this.router.navigateByUrl('/login');
   }
 
   subItens: any;
-  email: string = 'Novolucas@email.com';
+  email: string = '';
 
   ngOnInit(): void {
     this.subItens = this.store.getAllSubItensBusinessModel(this.email).then(subitens => {

@@ -6,12 +6,14 @@ import { HomeComponent } from './busyness-model/home/home.component';
 
 import { routing } from  '../app.routing';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     BusynessModelComponent,
     EditarItemBusynessComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [ 
     CommonModule,
