@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { StoreService } from 'src/app/store.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'business-home',
@@ -51,8 +53,8 @@ export class HomeComponent implements OnInit {
       descricao: 'Quem são os Clientes que você pretende atender? Eles tem um perfil específico? Como eles estão agrupados? Onde estão localizados?',
       subitens: []
     },
-    
-    
+
+
     {
       icone: '../../../assets/aplicativo-de-planilha.svg',
       titulo: 'Estruturas de Custos',
@@ -67,9 +69,9 @@ export class HomeComponent implements OnInit {
       subitens: []
     },
   ];
-  
 
-  blocos: any[]= [
+
+  blocos: any[] = [
     { estilo: 'success', titulo: 'COMO?' },
     { estilo: 'danger', titulo: 'O QUE?' },
     { estilo: 'primary', titulo: 'PARA QUEM?' },
@@ -77,49 +79,65 @@ export class HomeComponent implements OnInit {
   ];
 
 
-  constructor(private router: Router) {  
-    console.log(this.router.getCurrentNavigation());
-
-    if(this.router.getCurrentNavigation()?.extras.state?.subItens.length > 0){
-      console.log("não é null");
-      var nav = this.router.getCurrentNavigation();
-      var routeId = nav.extras.state.id;
-      this.itens[routeId].subitens = nav.extras.state.subItens;      
-    } else console.log("null");
+  constructor(private router: Router, private store: StoreService) {
   }
+
+  subItens: any;
+  email: string = 'Novolucas@email.com';
 
   ngOnInit(): void {
-  }
-
-  getIcon(id:number){
-    return this.itens[id].icone;
-  }
-
-  getTitulo(id:number){
-    return this.itens[id].titulo;
-  }
-
-  getDescricao(id:number){
-    return this.itens[id].descricao;
-  }
-  getSubItens(id:number){
-    return this.itens[id].subitens;
-  }
-
-  btnAction(id:number){
-    var item = this.itens[id];
-    var bloco = this.getBlockById(id);
-    this.router.navigateByUrl('/businessmodel/editar', {
-      state: { id: id, item: item, bloco: bloco }
+    this.subItens = this.store.getAllSubItensBusinessModel(this.email).then(subitens => {
+      var sub = subitens as any;
+      if(sub == undefined) this.store.createNewUser(this.email);
+      else {
+        this.atribuition(sub.sub00,0);
+        this.atribuition(sub.sub01,1);
+        this.atribuition(sub.sub02,2);
+        this.atribuition(sub.sub03,3);
+        this.atribuition(sub.sub04,4);
+        this.atribuition(sub.sub05,5);
+        this.atribuition(sub.sub06,6);
+        this.atribuition(sub.sub07,7);
+        this.atribuition(sub.sub08,8);
+      }      
     });    
   }
 
-  getBlockById(id:number){
-    if(id <0) return;
-    if(id < 3) return this.blocos[0];
-    if(id == 3) return this.blocos[1];
-    if(id < 7) return this.blocos[2];
-    else return this.blocos[3];    
+  atribuition(item: any, id: number){
+    if(item != undefined){
+      this.itens[id].subitens = item;
+    }
+  }
+
+  getIcon(id: number) {
+    return this.itens[id].icone;
+  }
+
+  getTitulo(id: number) {
+    return this.itens[id].titulo;
+  }
+
+  getDescricao(id: number) {
+    return this.itens[id].descricao;
+  }
+  getSubItens(id: number) {
+    return this.itens[id].subitens;
+  }
+
+  btnAction(id: number) {
+    var item = this.itens[id];
+    var bloco = this.getBlockById(id);
+    this.router.navigateByUrl('/businessmodel/editar', {
+      state: { id: id, item: item, bloco: bloco, email: this.email }
+    });
+  }
+
+  getBlockById(id: number) {
+    if (id < 0) return;
+    if (id < 3) return this.blocos[0];
+    if (id == 3) return this.blocos[1];
+    if (id < 7) return this.blocos[2];
+    else return this.blocos[3];
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StoreService } from 'src/app/store.service';
 
 @Component({
   selector: 'editar-item-busyness',
@@ -12,7 +13,7 @@ export class EditarItemBusynessComponent implements OnInit {
     estilo: 'success',
     titulo: 'COMO?'
   };
-  
+
   item: any = {
     icone: '../../../assets/parceria.svg',
     titulo: 'TITULO DO ITEM',
@@ -22,37 +23,40 @@ export class EditarItemBusynessComponent implements OnInit {
 
   formValue: string = '';
   id: number;
+  email: string = '';
 
-  constructor(private route: Router) {
+
+  constructor(private route: Router, private store: StoreService) {
     const nav = this.route.getCurrentNavigation();
     this.id = nav.extras.state.id;
     this.bloco = nav.extras.state.bloco;
     this.item = nav.extras.state.item;
-   }
+    this.email = nav.extras.state.email;
+  }
 
   ngOnInit(): void {
   }
 
-  getFont(){
-    return 'text-'+this.bloco.estilo;
+  getFont() {
+    return 'text-' + this.bloco.estilo;
   }
-  getButton(){
-    return 'btn btn-lg btn-'+this.bloco.estilo;
+  getButton() {
+    return 'btn btn-lg btn-' + this.bloco.estilo;
   }
-  getBorder(){
-    return 'card mx-md-5 border-'+this.bloco.estilo;
+  getBorder() {
+    return 'card mx-md-5 border-' + this.bloco.estilo;
   }
-  getIcon(){
+  getIcon() {
     return this.item.icone;
   }
-  addSubItem(){
+  addSubItem() {
     this.item.subitens.push(this.formValue);
     this.formValue = '';
   }
-  backAndSave(){
-    this.route.navigateByUrl('/businessmodel', {
-      state: { id: this.id, subItens: this.item.subitens }
-    });    
+  backAndSave() {
+    this.store.addSubItemBusinessModel(this.item.subitens, this.email, this.id);
+    this.route.navigateByUrl('/businessmodel');
   }
+
 
 }

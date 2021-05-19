@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { SbtnHomeComponent } from './sbtn-home/sbtn-home.component';
 import { CommonModule } from '@angular/common';
 import { FerramentasModule } from './ferramentas/ferramentas.module';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { FerramentasModule } from './ferramentas/ferramentas.module';
     routing,
     CommonModule,
     FerramentasModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
