@@ -6,6 +6,7 @@ import { BusynessModelComponent } from './ferramentas/busyness-model/busyness-mo
 import { EditarItemBusynessComponent } from './ferramentas/busyness-model/editar-item-busyness/editar-item-busyness.component';
 import { HomeComponent } from './ferramentas/busyness-model/home/home.component';
 import { LoginComponent } from './ferramentas/login/login.component';
+import { MapaPersonaComponent } from './ferramentas/mapa-persona/mapa-persona.component';
 
 
 const APP_ROUTES : Routes = [
@@ -18,7 +19,8 @@ const APP_ROUTES : Routes = [
             { path: 'editar', component: EditarItemBusynessComponent }
         ]
      },
-     { path: 'login', component: LoginComponent }
+     { path: 'login', component: LoginComponent },
+     { path: 'personamap', component: MapaPersonaComponent },
 ];
 
 export const routing: ModuleWithProviders<any> = RouterModule.forRoot(APP_ROUTES);

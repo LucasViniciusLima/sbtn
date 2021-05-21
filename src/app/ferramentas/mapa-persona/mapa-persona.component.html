@@ -1,0 +1,109 @@
+<div class="min-vh-100 bg-dark background-persona">
+    <div class="container-md py-2 py-md-5">
+        <div class="row">
+            <div class="col-md-4 text-white px-3">
+                <h1 class="bold-title-persona">CRIE SUA PERSONA (avatar)</h1>
+                <div class="row my-3">
+                    <div class="col">
+                        <img class="icon-persona mx-auto" [src]="avatar[0]" (mouseenter)="mouseEnterChar(0)"
+                            (mouseleave)="mouseLeaveChar()" (click)="setChar(0)" alt="avatar01">
+                    </div>
+                    <div class="col">
+                        <img class="icon-persona" [src]="avatar[1]" (mouseenter)="mouseEnterChar(1)"
+                            (mouseleave)="mouseLeaveChar()" (click)="setChar(1)" alt="avatar02">
+                    </div>
+                    <div class="col">
+                        <img class="icon-persona" [src]="avatar[2]" (mouseenter)="mouseEnterChar(2)"
+                            (mouseleave)="mouseLeaveChar()" (click)="setChar(2)" alt="avatar03">
+                    </div>
+                    <div class="col">
+                        <img class="icon-persona" [src]="avatar[3]" (mouseenter)="mouseEnterChar(3)"
+                            (mouseleave)="mouseLeaveChar()" (click)="setChar(3)" alt="avatar04">
+                    </div>
+                </div>
+                <div class="mb-4 bold-persona">No quadro ao lado você responderá questões sobre sua persona.</div>
+                <div class="mb-4 bold-persona">Complete o quadro com os resultados de suas pesquisas e conversas com
+                    possíveis compradores</div>
+                <div class="mb-4 bold-persona">Ao terminar, você terá mais informações para criar uma estratégia mais
+                    completa.</div>
+            </div>
+            <div class="col-md-8 text-white bold-persona">
+                <div class="container-md">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <div class="p-3 h-100 bg-info rounded">
+                                <div>Quais são seus valores?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="p-3 h-100 bg-info rounded">
+                                <div>O que ele(a) faz no dia a dia?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-md-3 mb-2 mb-md-0">
+                            <div class="p-3 bg-info rounded h-50 mb-2">
+                                <div>Quais são suas metas?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="p-3 pb-md-5 bg-info rounded h-50">
+                                <div>Quais são as marcas que costumam usar?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-md-3 my-3 my-md-0">
+                            <div class="p-3 bg-primary rounded h-100">
+                                <div class="d-flex justify-content-center">
+                                    <img [src]="activeAvatar" class="icon-main-persona" alt="">
+                                </div>
+                                <input type="text" class="form-control my-2" placeholder="Idade">
+                                <input type="text" class="form-control my-2" placeholder="Onde trabalha">
+                                <input type="text" class="form-control my-2" placeholder="Qual cargo">
+                                <input type="text" class="form-control my-2" placeholder="Educação e personalidade">                                
+                            </div>
+                        </div>
+                        <div class="col-md-4 py-md-3 mb-3 mb-md-0">                            
+                            <div class="p-3 bg-info rounded h-50 mb-2">
+                                <div>Qual é o seu sonho?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="p-3 pb-md-5 bg-info rounded h-50">
+                                <div>O que ele(a) consome no dia a dia?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2 mt-md-2">
+                            <div class="p-3 bg-info rounded h-100">
+                                <div>Quais são suas dores?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2 mt-md-2">
+                            <div class="p-3 bg-info rounded h-100">
+                                <div>Como o meu negócio pode impactar de forma positiva a vida dessa persona?</div>
+                                <div class="form-group mt-2">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

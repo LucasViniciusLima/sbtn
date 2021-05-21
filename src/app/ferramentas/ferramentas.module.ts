@@ -7,6 +7,7 @@ import { HomeComponent } from './busyness-model/home/home.component';
 import { routing } from  '../app.routing';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { MapaPersonaComponent } from './mapa-persona/mapa-persona.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { LoginComponent } from './login/login.component';
     EditarItemBusynessComponent,
     HomeComponent,
     LoginComponent,
+    MapaPersonaComponent,
   ],
   imports: [ 
     CommonModule,
