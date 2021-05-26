@@ -47,7 +47,7 @@ export class StoreService {
     return this.firestore.collection('modeloNegocios').doc(userId).ref.get().then(function (doc) { return doc.data() });
   }
   
-  createNewUser(userId: string){
+  createNewUserBusinessModel(userId: string){
     this.firestore.collection('modeloNegocios').doc(userId).set({"sub00": []});
   }
 

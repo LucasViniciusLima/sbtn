@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeBusynessComponent implements OnInit {
 
   itens: any[] = [
     {
@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.subItens = this.store.getAllSubItensBusinessModel(this.email).then(subitens => {
       var sub = subitens as any;
-      if(sub == undefined) this.store.createNewUser(this.email);
+      if(sub == undefined) this.store.createNewUserBusinessModel(this.email);
       else {
         this.atribuition(sub.sub00,0);
         this.atribuition(sub.sub01,1);

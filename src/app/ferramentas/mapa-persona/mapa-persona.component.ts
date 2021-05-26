@@ -7,36 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaPersonaComponent implements OnInit {
 
-  avatar: string[] = ["../../../assets/avatar01.png","../../../assets/avatar02.png","../../../assets/avatar03.png","../../../assets/avatar04.png"];
   constructor() { }
-
-  activeAvatar: string ="../../../assets/avatar01.png";
-  handler: string = "";
-
-  personaG: string[] = ['','','','','','','','','','','',''];
 
   ngOnInit(): void {
   }
-
-  mouseEnterChar(id){
-    this.handler = this.activeAvatar;
-    this.activeAvatar = this.avatar[id];
-  }
-  mouseLeaveChar(){
-    this.activeAvatar = this.handler;
-    this.handler = "";
-  }
-  setChar(id){
-    this.handler = this.avatar[id];
-  }
-  camposPreenchidos(){
-    for(let i=0;i<this.personaG.length;i++)  {
-      if(this.personaG[i] == "") return false;
-    }
-    return true;
-  }
-
-  
-
 
 }

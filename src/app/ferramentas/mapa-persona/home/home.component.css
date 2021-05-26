@@ -1,0 +1,50 @@
+.background-persona{
+    background-attachment: fixed;
+    background-size: cover;
+    /*background-image: url("../../../assets/persona-background.jpg");*/
+    background-image:  linear-gradient(#00000063, #00000069), url("../../../../assets/persona-background.jpg");
+}
+
+.bold-persona{
+    font-weight:600;
+    font-size: 18px;
+}
+.bold-title-persona{
+    font-weight:bolder;
+    font-size: 60px;
+}
+.icon-persona{
+    width: 100%;
+    height: auto;
+    background-color: #FFFF;
+    border-radius: 100%;
+    border-color:aqua;
+    border-style: solid;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.icon-main-persona{
+    width: 150px;
+    height: 150px;
+    background-color: #FFFF;
+    border-radius: 100%;
+    border-color:rgb(255, 123, 0);
+    border-style: solid;
+    border-width: 6px;
+}
+
+@media only screen and (max-width: 760px) {
+    .bold-title-persona{
+    font-weight:bold;
+    font-size: 35px;
+    }
+}
+  @media only screen and (max-width: 992px) {
+    .icon-main-persona{
+        width: 90px;
+        height: 90px;
+        border-width: 3px;
+    }
+}
+  
