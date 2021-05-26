@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MapaPersonaComponent } from './mapa-persona/mapa-persona.component';
 
+
 @NgModule({
   declarations: [
     BusynessModelComponent,

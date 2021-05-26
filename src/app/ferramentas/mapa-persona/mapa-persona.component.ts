@@ -13,8 +13,11 @@ export class MapaPersonaComponent implements OnInit {
   activeAvatar: string ="../../../assets/avatar01.png";
   handler: string = "";
 
+  personaG: string[] = ['','','','','','','','','','','',''];
+
   ngOnInit(): void {
   }
+
   mouseEnterChar(id){
     this.handler = this.activeAvatar;
     this.activeAvatar = this.avatar[id];
@@ -26,6 +29,14 @@ export class MapaPersonaComponent implements OnInit {
   setChar(id){
     this.handler = this.avatar[id];
   }
+  camposPreenchidos(){
+    for(let i=0;i<this.personaG.length;i++)  {
+      if(this.personaG[i] == "") return false;
+    }
+    return true;
+  }
+
+  
 
 
 }

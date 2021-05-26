@@ -25,7 +25,11 @@
                 <div class="mb-4 bold-persona">Complete o quadro com os resultados de suas pesquisas e conversas com
                     possíveis compradores</div>
                 <div class="mb-4 bold-persona">Ao terminar, você terá mais informações para criar uma estratégia mais
-                    completa.</div>
+                    completa.
+                </div>
+                <button type="button" [class.btn-secondary]="!camposPreenchidos()"
+                    [class.btn-success]="camposPreenchidos()" class="btn btn-lg btn-block">Concluir Persona e ver
+                    Resultados</button>
             </div>
             <div class="col-md-8 text-white bold-persona">
                 <div class="container-md">
@@ -34,7 +38,9 @@
                             <div class="p-3 h-100 bg-info rounded">
                                 <div>Quais são seus valores?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[0]" #txt00="ngModel"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +48,9 @@
                             <div class="p-3 h-100 bg-info rounded">
                                 <div>O que ele(a) faz no dia a dia?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                        [(ngModel)]="personaG[1]" rows="3" #txt01="ngModel"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -50,13 +58,17 @@
                             <div class="p-3 bg-info rounded h-50 mb-2">
                                 <div>Quais são suas metas?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[2]" #txt02="ngModel"></textarea>
                                 </div>
                             </div>
                             <div class="p-3 pb-md-5 bg-info rounded h-50">
                                 <div>Quais são as marcas que costumam usar?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[3]" #txt03="ngModel"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -65,23 +77,32 @@
                                 <div class="d-flex justify-content-center">
                                     <img [src]="activeAvatar" class="icon-main-persona" alt="">
                                 </div>
-                                <input type="text" class="form-control my-2" placeholder="Idade">
-                                <input type="text" class="form-control my-2" placeholder="Onde trabalha">
-                                <input type="text" class="form-control my-2" placeholder="Qual cargo">
-                                <input type="text" class="form-control my-2" placeholder="Educação e personalidade">                                
+
+                                <input type="text" class="form-control my-2" placeholder="Idade"
+                                    [(ngModel)]="personaG[4]" #txt04="ngModel">
+                                <input type="text" class="form-control my-2" placeholder="Onde trabalha"
+                                    [(ngModel)]="personaG[5]" #txt05="ngModel">
+                                <input type="text" class="form-control my-2" placeholder="Qual cargo"
+                                    [(ngModel)]="personaG[6]" #txt06="ngModel">
+                                <input type="text" class="form-control my-2" placeholder="Educação e personalidade"
+                                    [(ngModel)]="personaG[7]" #txt07="ngModel">
                             </div>
                         </div>
-                        <div class="col-md-4 py-md-3 mb-3 mb-md-0">                            
+                        <div class="col-md-4 py-md-3 mb-3 mb-md-0">
                             <div class="p-3 bg-info rounded h-50 mb-2">
                                 <div>Qual é o seu sonho?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[8]" #txt08="ngModel"></textarea>
                                 </div>
                             </div>
                             <div class="p-3 pb-md-5 bg-info rounded h-50">
                                 <div>O que ele(a) consome no dia a dia?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[9]" #txt09="ngModel"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +110,9 @@
                             <div class="p-3 bg-info rounded h-100">
                                 <div>Quais são suas dores?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[10]" #txt10="ngModel"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +120,9 @@
                             <div class="p-3 bg-info rounded h-100">
                                 <div>Como o meu negócio pode impactar de forma positiva a vida dessa persona?</div>
                                 <div class="form-group mt-2">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        [(ngModel)]="personaG[11]" #txt11="ngModel"></textarea>
                                 </div>
                             </div>
                         </div>
