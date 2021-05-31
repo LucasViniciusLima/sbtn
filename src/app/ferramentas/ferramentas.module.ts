@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { MapaPersonaComponent } from './mapa-persona/mapa-persona.component';
 import { ResultadoComponent } from './mapa-persona/resultado/resultado.component';
 import { HomePersonaComponent } from './mapa-persona/home/home.component';
+import { AdmAtividadesComponent } from './adm-atividades/adm-atividades.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomePersonaComponent } from './mapa-persona/home/home.component';
     LoginComponent,
     MapaPersonaComponent,
     ResultadoComponent,
-    HomePersonaComponent
+    HomePersonaComponent,
+    AdmAtividadesComponent
   ],
   imports: [ 
     CommonModule,

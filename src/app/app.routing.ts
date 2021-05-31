@@ -9,7 +9,7 @@ import { HomeBusynessComponent } from './ferramentas/busyness-model/home/home.co
 import { LoginComponent } from './ferramentas/login/login.component';
 import { MapaPersonaComponent } from './ferramentas/mapa-persona/mapa-persona.component';
 import { HomePersonaComponent } from './ferramentas/mapa-persona/home/home.component';
-
+import { AdmAtividadesComponent } from './ferramentas/adm-atividades/adm-atividades.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: SbtnHomeComponent },
@@ -21,6 +21,7 @@ const APP_ROUTES: Routes = [
         ]
     },
     { path: 'login', component: LoginComponent },
+    { path: 'admatividades', component: AdmAtividadesComponent },
     { path: 'personamap', component: MapaPersonaComponent, children: [
         { path: '', component:HomePersonaComponent},
         { path: 'resultado', component: ResultadoComponent}

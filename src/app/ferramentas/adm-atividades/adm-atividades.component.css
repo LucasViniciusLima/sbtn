@@ -1,0 +1,28 @@
+.border-purple{
+    border-color:rgb(152, 42, 255);
+    border-width: 2px;
+}
+.text-purple{
+    color:rgb(152, 42, 255);
+}
+.img-importante{
+    width:70px;
+}
+.img-urgente{
+    height: 70px;
+}
+.borda-mobile{
+    border-width: 1px;
+}
+
+@media only screen and (max-width: 760px) {
+    .img-importante{
+        width:30px;
+    }
+    .img-urgente{
+        height:30px;
+    }
+    .borda-mobile{
+        border-width: 0px!important;
+    }
+  }
