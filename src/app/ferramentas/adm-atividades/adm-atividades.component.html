@@ -1,7 +1,7 @@
 <div class="bg-dark min-vh-100">
-    <div class="container py-md-4">
+    <div class="container pt-md-4">
         <div class="row">
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-md-3 mb-md-0 mb-3 vh-100" style=" overflow-y: auto;">
                 <div class="h1 text-white mb-3 text-center">
                     ATIVIDADES
                 </div>
@@ -30,13 +30,17 @@
                 </div>
 
                 <div>
-                    <div *ngFor="let atividade of atividadesList" class="card my-2">
+                    <div *ngFor="let atividade of atividadesList let i=index" class="card my-2">
                         <div class="card-header">
-                            <h5 class="card-title">{{ atividade.titulo }}</h5>
+                            <h5 class="card-title">{{ 'Titulo: ' + atividade.titulo }}</h5>
                         </div>
                         <div class="card-body">
-                            <p class="cart-text">{{ 'Urgencia: ' + atividade.urgencia + ' Importancia:' + atividade.importancia}}</p>
-                            <p class="cart-text">{{ atividade.descricao }}</p>
+                            <p class="cart-text">{{ 'Urgencia: ' + atividade.urgencia}} <br> {{ 'Importancia: ' +
+                                atividade.importancia}}</p>
+                            <p class="cart-text">{{ 'Descrição: ' + atividade.descricao }}</p>
+                            <div class="float-end">
+                                <img (click)="deleteItem(i)" src="../../../assets/excludeIcon.svg" style="width: 10px; cursor: pointer;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,44 +54,47 @@
                         <label class="fw-bold text-info mb-2">10 - Máximo</label>
                         <div class="row mb-3">
                             <div class="col-6">
-                                <div class="card text-info border-info bg-transparent  h-100">
+                                <div class="card border-info bg-transparent  h-100">
                                     <div class="card-header">
-                                        <h5 class="card-title text-center">FAÇA</h5>
+                                        <h5 class="card-title text-info text-center">FAÇA</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">Esta atividade é Importante e não urgente.</p>
-                                        <div *ngFor="let atividade of getDo()"
-                                            class="card bg-transparent border-info my-1 p-1">
+                                        <p class="card-text text-info">Esta atividade é Importante e não urgente.</p>
+                                        <div *ngFor="let atividade of getDo()" class="card borda-do my-1 p-1 ps-3">
                                             <div class="row">
                                                 <div class="col-10">
                                                     <h5 class="card-title">{{ atividade.item.titulo }}</h5>
                                                 </div>
                                                 <div class="col-2 px-4">
-                                                    <img (click)="deleteItem(atividade.id)" src="../../../assets/excludeIcon.svg" style="width: 10px; cursor: pointer;">
+                                                    <img (click)="deleteItem(atividade.id)"
+                                                        src="../../../assets/excludeIcon.svg"
+                                                        style="width: 10px; cursor: pointer;">
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                             <div class="cart-text">{{ atividade.item.descricao }}</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="card bg-transparent text-purple border-purple  h-100">
+                                <div class="card bg-transparent border-purple  h-100">
                                     <div class="card-header">
-                                        <h5 class="card-title text-center">FAÇA AGORA</h5>
+                                        <h5 class="card-title text-center text-purple">FAÇA AGORA</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">Esta atividade é Importante e Urgente.</p>
+                                        <p class="card-text text-purple">Esta atividade é Importante e Urgente.</p>
                                         <div *ngFor="let atividade of getDoNow()"
-                                            class="card bg-transparent border-purple my-1 p-1">
+                                            class="card borda-do-now my-1 p-1 ps-3">
                                             <div class="row">
                                                 <div class="col-10">
                                                     <h5 class="card-title">{{ atividade.item.titulo }}</h5>
                                                 </div>
                                                 <div class="col-2 px-4">
-                                                    <img (click)="deleteItem(atividade.id)" src="../../../assets/excludeIcon.svg" style="width: 10px; cursor: pointer;">
+                                                    <img (click)="deleteItem(atividade.id)"
+                                                        src="../../../assets/excludeIcon.svg"
+                                                        style="width: 10px; cursor: pointer;">
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                             <div class="cart-text">{{ atividade.item.descricao }}</div>
                                         </div>
                                     </div>
@@ -96,46 +103,50 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-6">
-                                <div class="card mb-3 bg-transparent border-secondary text-white h-100">
+                                <div class="card mb-3 bg-transparent border-secondary h-100">
                                     <div class="card-header">
                                         <h5 class="card-title text-center text-secondary">NÃO FAÇA</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">Esta atividade não é Importante nem Urgente.</p>
-
+                                        <p class="card-text text-white">Esta atividade não é Importante nem Urgente.</p>
                                         <div *ngFor="let atividade of getNoToDo()"
-                                            class="card bg-transparent border-secondary my-1 p-1">
+                                            class="card borda-not-do my-1 p-1 ps-3">
                                             <div class="row">
                                                 <div class="col-10">
                                                     <h5 class="card-title">{{ atividade.item.titulo }}</h5>
                                                 </div>
                                                 <div class="col-2 px-4">
-                                                    <img (click)="deleteItem(atividade.id)" src="../../../assets/excludeIcon.svg" style="width: 10px; cursor: pointer;">
+                                                    <img (click)="deleteItem(atividade.id)"
+                                                        src="../../../assets/excludeIcon.svg"
+                                                        style="width: 10px; cursor: pointer;">
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                             <div class="cart-text">{{ atividade.item.descricao }}</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="card border-danger text-danger bg-transparent mb-3 h-100">
+                                <div class="card border-danger bg-transparent mb-3 h-100">
                                     <div class="card-header">
-                                        <h5 class="card-title text-center">DELEGUE OU NÃO FAÇA</h5>
+                                        <h5 class="card-title text-center text-danger">DELEGUE OU NÃO FAÇA</h5>
                                     </div>
-                                    <div class="card-body text-danger">
-                                        <p class="card-text">Esta atividade é Urgente mas não é Importante.</p>
+                                    <div class="card-body">
+                                        <p class="card-text text-danger">Esta atividade é Urgente mas não é Importante.
+                                        </p>
                                         <div *ngFor="let atividade of getDelegate() let i = index"
-                                            class="card bg-transparent border-danger my-1 p-1">
-                                            
+                                            class="card borda-delegate my-1 p-1 ps-3">
+
                                             <div class="row">
                                                 <div class="col-10">
                                                     <h5 class="card-title">{{ atividade.item.titulo }}</h5>
                                                 </div>
                                                 <div class="col-2 px-4">
-                                                    <img (click)="deleteItem(atividade.id)" src="../../../assets/excludeIcon.svg" style="width: 10px; cursor: pointer;">
+                                                    <img (click)="deleteItem(atividade.id)"
+                                                        src="../../../assets/excludeIcon.svg"
+                                                        style="width: 10px; cursor: pointer;">
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                             <div class="cart-text">{{ atividade.item.descricao }}</div>
                                         </div>
                                     </div>

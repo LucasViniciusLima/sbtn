@@ -15,6 +15,24 @@
     border-width: 1px;
 }
 
+.borda-do{
+    border-left-width: 5px;
+    border-color:#0dcaf0;
+}
+.borda-not-do{
+    border-left-width: 5px;
+    border-color:#6c757d;
+}
+.borda-delegate{
+    border-left-width: 5px;
+    border-color:#dc3545; 
+}
+.borda-do-now{
+    border-left-width: 5px;
+    border-color:rgb(152, 42, 255);
+}
+
+
 @media only screen and (max-width: 760px) {
     .img-importante{
         width:30px;
@@ -25,4 +43,6 @@
     .borda-mobile{
         border-width: 0px!important;
     }
-  }
+}
+
+  
