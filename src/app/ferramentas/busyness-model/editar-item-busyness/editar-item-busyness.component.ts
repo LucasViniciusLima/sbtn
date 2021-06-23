@@ -59,7 +59,7 @@ export class EditarItemBusynessComponent implements OnInit {
   }
   backAndSave() {
     this.store.addSubItemBusinessModel(this.item.subitens, this.email, this.id);
-    this.route.navigateByUrl('/businessmodel', { state: { email: this.email} });
+    this.route.navigateByUrl('/businessmodel/home', { state: { email: this.email} });
   }
 
 

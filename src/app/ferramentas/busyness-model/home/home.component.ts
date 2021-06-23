@@ -82,7 +82,7 @@ export class HomeBusynessComponent implements OnInit {
   constructor(private router: Router, private store: StoreService) {
     const nav = this.router.getCurrentNavigation();
     if(nav.extras.state != undefined) this.email = nav.extras.state.email;
-    else this.router.navigateByUrl('/login',{state:{redirect:'/businessmodel'}});
+    else this.router.navigateByUrl('/login',{state:{redirect:'/businessmodel/home'}});
   }
 
   subItens: any;
