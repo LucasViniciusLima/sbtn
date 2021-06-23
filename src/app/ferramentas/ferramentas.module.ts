@@ -11,6 +11,7 @@ import { MapaPersonaComponent } from './mapa-persona/mapa-persona.component';
 import { ResultadoComponent } from './mapa-persona/resultado/resultado.component';
 import { HomePersonaComponent } from './mapa-persona/home/home.component';
 import { AdmAtividadesComponent } from './adm-atividades/adm-atividades.component';
+import { SubUsuariosComponent } from './busyness-model/sub-usuarios/sub-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AdmAtividadesComponent } from './adm-atividades/adm-atividades.componen
     MapaPersonaComponent,
     ResultadoComponent,
     HomePersonaComponent,
-    AdmAtividadesComponent
+    AdmAtividadesComponent,
+    SubUsuariosComponent
   ],
   imports: [ 
     CommonModule,

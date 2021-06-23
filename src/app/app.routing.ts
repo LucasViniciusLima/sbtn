@@ -10,14 +10,17 @@ import { LoginComponent } from './ferramentas/login/login.component';
 import { MapaPersonaComponent } from './ferramentas/mapa-persona/mapa-persona.component';
 import { HomePersonaComponent } from './ferramentas/mapa-persona/home/home.component';
 import { AdmAtividadesComponent } from './ferramentas/adm-atividades/adm-atividades.component';
+import { SubUsuariosComponent } from './ferramentas/busyness-model/sub-usuarios/sub-usuarios.component';
+
 
 const APP_ROUTES: Routes = [
     { path: '', component: SbtnHomeComponent },
     {
         path: 'businessmodel', component: BusynessModelComponent,
         children: [
-            { path: '', component: HomeBusynessComponent },
-            { path: 'editar', component: EditarItemBusynessComponent }
+            { path: 'home', component: HomeBusynessComponent },
+            { path: 'editar', component: EditarItemBusynessComponent },
+            { path: '', component: SubUsuariosComponent}
         ]
     },
     { path: 'login', component: LoginComponent },

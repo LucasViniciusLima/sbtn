@@ -7,9 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class StoreService {
 
-  constructor(private firestore: AngularFirestore) {
-
-  }
+  constructor(private firestore: AngularFirestore) { }
 
   addSubItemBusinessModel(novoS: string[], userId: string, itemId: number) {
     switch (itemId) {
@@ -48,7 +46,7 @@ export class StoreService {
   }
   
   createNewUserBusinessModel(userId: string){
-    this.firestore.collection('modeloNegocios').doc(userId).set({"sub00": []});
+    this.firestore.collection('modeloNegocios').doc(userId).set({"users": [{ nome:'user 01', itens:[]}]});
   }
 
 }

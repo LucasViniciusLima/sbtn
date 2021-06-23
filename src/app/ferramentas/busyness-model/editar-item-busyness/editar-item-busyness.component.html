@@ -13,12 +13,18 @@
                     <h3>{{ bloco.titulo }}</h3>
                     <h1 class="card-title">{{ item.titulo }}</h1>
                     <div class="card-text">{{ item.descricao }}</div>
-                    <ul>
-                        <li *ngFor="let subitem of item.subitens">{{ subitem }}</li>
-                    </ul>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Descreva a ação ou item aqui." [(ngModel)]="formValue">
+                        <input type="text" class="form-control" placeholder="Descreva a ação ou item aqui."
+                            [(ngModel)]="formValue">
                         <button [class]="getButton()" type="button" (click)="addSubItem()">Adicionar</button>
+                    </div>
+                    <ul>
+                        <li class="border-bottom" *ngFor="let subitem of item.subitens let i=index">{{ subitem }} <a
+                                class="float-end" style="cursor:pointer;" (click)="removeSubItem(i)">Excluir Item</a>
+                        </li>
+                    </ul>
+                    <div class="float-end">
+                        <button [class]="getButton()" type="button" (click)="backAndSave()">Salvar e voltar</button>
                     </div>
                 </div>
             </div>

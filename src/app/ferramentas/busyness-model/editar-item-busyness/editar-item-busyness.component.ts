@@ -54,6 +54,9 @@ export class EditarItemBusynessComponent implements OnInit {
     this.item.subitens.push(this.formValue);
     this.formValue = '';
   }
+  removeSubItem(id: number){
+    this.item.subitens.splice(id,1);
+  }
   backAndSave() {
     this.store.addSubItemBusinessModel(this.item.subitens, this.email, this.id);
     this.route.navigateByUrl('/businessmodel', { state: { email: this.email} });
