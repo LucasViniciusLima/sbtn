@@ -11,8 +11,7 @@ export class HomePersonaComponent implements OnInit {
   avatar: string[] = ["../../../assets/avatar01.png", "../../../assets/avatar02.png", "../../../assets/avatar03.png", "../../../assets/avatar04.png"];
 
   constructor(private route: Router) {
-    const nav = this.route.getCurrentNavigation();
-    if (nav.extras.state == undefined) this.route.navigateByUrl('/login', { state: { redirect: '/personamap' } });
+    
   }
 
   activeAvatar: string = "../../../assets/avatar01.png";

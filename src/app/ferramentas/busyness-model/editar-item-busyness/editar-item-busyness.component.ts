@@ -26,13 +26,7 @@ export class EditarItemBusynessComponent implements OnInit {
   email: string = '';
 
   constructor(private route: Router, private store: StoreService) {
-    const nav = this.route.getCurrentNavigation();
-    if(nav.extras.state != undefined){
-      this.id = nav.extras.state.id;
-      this.bloco = nav.extras.state.bloco;
-      this.item = nav.extras.state.item;
-      this.email = nav.extras.state.email;
-    } else this.route.navigateByUrl('/businessmodel');
+    
   }
 
   ngOnInit(): void {
@@ -58,8 +52,8 @@ export class EditarItemBusynessComponent implements OnInit {
     this.item.subitens.splice(id,1);
   }
   backAndSave() {
-    this.store.addSubItemBusinessModel(this.item.subitens, this.email, this.id);
-    this.route.navigateByUrl('/businessmodel/home', { state: { email: this.email} });
+    //this.store.addSubItemBusinessModel(this.item.subitens, this.email, this.id);
+    this.route.navigateByUrl('/businessmodel', { state: { email: this.email} });
   }
 
 

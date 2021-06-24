@@ -79,31 +79,14 @@ export class HomeBusynessComponent implements OnInit {
   ];
 
 
-  constructor(private router: Router, private store: StoreService) {
-    const nav = this.router.getCurrentNavigation();
-    if(nav.extras.state != undefined) this.email = nav.extras.state.email;
-    else this.router.navigateByUrl('/login',{state:{redirect:'/businessmodel/home'}});
+  constructor(private router: Router, private store: StoreService) {    
   }
 
   subItens: any;
   email: string = '';
 
   ngOnInit(): void {
-    this.subItens = this.store.getAllSubItensBusinessModel(this.email).then(subitens => {
-      var sub = subitens as any;
-      if(sub == undefined) this.store.createNewUserBusinessModel(this.email);
-      else {
-        this.atribuition(sub.sub00,0);
-        this.atribuition(sub.sub01,1);
-        this.atribuition(sub.sub02,2);
-        this.atribuition(sub.sub03,3);
-        this.atribuition(sub.sub04,4);
-        this.atribuition(sub.sub05,5);
-        this.atribuition(sub.sub06,6);
-        this.atribuition(sub.sub07,7);
-        this.atribuition(sub.sub08,8);
-      }      
-    });    
+       
   }
 
   atribuition(item: any, id: number){

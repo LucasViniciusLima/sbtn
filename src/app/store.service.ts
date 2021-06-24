@@ -9,6 +9,17 @@ export class StoreService {
 
   constructor(private firestore: AngularFirestore) { }
 
+    getUserData(docName: string, collectionName: string){
+      return this.getCollection(collectionName).doc(docName).ref.get().then(function (doc) { return doc.data() });
+    }
+
+    getCollection(collectionName: string){
+      return this.firestore.collection(collectionName);
+    }
+
+  /*
+
+  alterar isso ta horrivel de se ver 
   addSubItemBusinessModel(novoS: string[], userId: string, itemId: number) {
     switch (itemId) {
       case 0:
@@ -39,14 +50,16 @@ export class StoreService {
         this.firestore.collection('modeloNegocios').doc(userId).update({ "sub08": novoS });
         break;
     }
-  }
+  }*/
 
   getAllSubItensBusinessModel(userId: string) {
-    return this.firestore.collection('modeloNegocios').doc(userId).ref.get().then(function (doc) { return doc.data() });
+    //return this.firestore.collection('modeloNegocios').doc(userId).ref.get().then(function (doc) { return doc.data() });
   }
   
   createNewUserBusinessModel(userId: string){
-    this.firestore.collection('modeloNegocios').doc(userId).set({"users": [{ nome:'user 01', itens:[]}]});
+    //this.firestore.collection('modeloNegocios').doc(userId).set({"users": [{ nome:'user 01', itens:[]}]});
   }
+  
+
 
 }
