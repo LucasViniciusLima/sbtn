@@ -9,13 +9,16 @@ export class StoreService {
 
   constructor(private firestore: AngularFirestore) { }
 
-    getUserData(docName: string, collectionName: string){
-      return this.getCollection(collectionName).doc(docName).ref.get().then(function (doc) { return doc.data() });
-    }
+  getUserData(docName: string, collectionName: string) {
+    return this.getCollection(collectionName).doc(docName).ref.get().then(function (doc) { return doc.data() });
+  }
 
-    getCollection(collectionName: string){
-      return this.firestore.collection(collectionName);
-    }
+  getCollection(collectionName: string) {
+    return this.firestore.collection(collectionName);
+  }
+  createNewCliente(userId: string, collectionName: string, novoCliente: string) {
+    this.getCollection(collectionName).doc(userId).set({"users": [{ nome:novoCliente, itens:[]}]});
+  }
 
   /*
 
@@ -52,14 +55,7 @@ export class StoreService {
     }
   }*/
 
-  getAllSubItensBusinessModel(userId: string) {
-    //return this.firestore.collection('modeloNegocios').doc(userId).ref.get().then(function (doc) { return doc.data() });
-  }
-  
-  createNewUserBusinessModel(userId: string){
-    //this.firestore.collection('modeloNegocios').doc(userId).set({"users": [{ nome:'user 01', itens:[]}]});
-  }
-  
+
 
 
 }
