@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
+  
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore) { 
+    
+  }
+
 
   getUserData(docName: string, collectionName: string) {
     return this.getCollection(collectionName).doc(docName).ref.get().then(function (doc) { return doc.data() });

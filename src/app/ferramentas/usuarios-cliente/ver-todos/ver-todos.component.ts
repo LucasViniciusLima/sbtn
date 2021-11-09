@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { StoreService } from '../../../store.service';
 
 @Component({
   selector: 'app-ver-todos',
@@ -8,20 +9,22 @@ import { FormsModule } from '@angular/forms';
 })
 export class VerTodosComponent implements OnInit {
 
-  usuarios: string[] = ["nome 1","nome 2", "nome 3", "nome 4"];
-  item: string = 'um novo item';
+  user: any;
   
-  constructor() {  }
+  constructor(private store: StoreService) {  }
 
   ngOnInit(): void {
+    this.store.getUserData('lucaslimavzt@gmail.com', 'users').then((clientesDoc) => {
+      this.user = clientesDoc as any;
+    });    
   }
 
   editar(){
-
+    console.log('editar');
   }
 
   excluir(){
-
+    console.log('excluir');
   }
 
 }
