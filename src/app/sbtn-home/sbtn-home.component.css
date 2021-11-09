@@ -1,3 +1,31 @@
+.card-section{
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("https://uploads-ssl.webflow.com/5e2088af647de0b43c9ff21d/5f5932fb5f2b246138eb9c5d_abstract-technology.png");
+    background-position: 0px 0px, 50% 45%;
+    background-size: auto, cover;  
+    border-bottom: 4px solid #ff8c00;
+}
+.card-titulo{
+  font-size: 34px;
+  line-height: 36px;
+  font-weight: 680;
+  font-size: 38px;
+  line-height: 43px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #ffa434;
+  font-weight: 700;
+}
+
+.card-subtitulo{
+  font-size: 26px;
+  line-height: 33px;
+  font-weight: 650;
+  line-height: 43px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
 .btn-home{
     padding: 9px 15px;
     border-radius: 10px;
