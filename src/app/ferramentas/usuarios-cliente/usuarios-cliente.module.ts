@@ -5,16 +5,21 @@ import { TestesIniciadosComponent } from './testes-iniciados/testes-iniciados.co
 
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { EntrarComponent } from './entrar/entrar.component';
 
 @NgModule({
   declarations: [
     VerTodosComponent,
     EditarComponent,
-    TestesIniciadosComponent
+    TestesIniciadosComponent,
+    EntrarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+  ],
+  exports: [
+    EntrarComponent
   ]
 })
 export class UsuariosClienteModule { }

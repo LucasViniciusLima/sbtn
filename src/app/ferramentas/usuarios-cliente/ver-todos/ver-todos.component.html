@@ -3,7 +3,7 @@
     <hr>
     <p>Todos os seus clientes dastrados nos testes aparecerão aqui.</p>
     <ul class="list-group">
-        <li *ngFor="let usuario of user?.clients" class="list-group-item list-group-item-action">
+        <li *ngFor="let usuario of clients" class="list-group-item list-group-item-action">
             <div>
                 {{ usuario?.name }}
                 <a class="bi bi-person-dash-fill float-end m-1" style="cursor:pointer;" (click)="excluir()"></a>

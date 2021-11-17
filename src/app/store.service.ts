@@ -14,7 +14,6 @@ export class StoreService {
     
   }
 
-
   getUserData(docName: string, collectionName: string) {
     return this.getCollection(collectionName).doc(docName).ref.get().then(function (doc) { return doc.data() });
   }
@@ -22,6 +21,7 @@ export class StoreService {
   getCollection(collectionName: string) {
     return this.firestore.collection(collectionName);
   }
+  
   createNewCliente(userId: string, collectionName: string, novoCliente: string) {
     this.getCollection(collectionName).doc(userId).set({"users": [{ nome:novoCliente, itens:[]}]});
   }

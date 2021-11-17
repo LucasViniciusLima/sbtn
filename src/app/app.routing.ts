@@ -11,6 +11,7 @@ import { HomePersonaComponent } from './ferramentas/mapa-persona/home/home.compo
 import { AdmAtividadesComponent } from './ferramentas/adm-atividades/adm-atividades.component';
 import { VerTodosComponent } from './ferramentas/usuarios-cliente/ver-todos/ver-todos.component';
 import { EditarComponent } from './ferramentas/usuarios-cliente/editar/editar.component';
+import { EntrarComponent } from './ferramentas/usuarios-cliente/entrar/entrar.component';
 
 
 const APP_ROUTES: Routes = [
@@ -37,6 +38,7 @@ const APP_ROUTES: Routes = [
             { path: 'resultado', component: ResultadoComponent }
         ]
     },
+    { path: 'usuario-entrar', component: EntrarComponent }
 ];
 
 export const routing: ModuleWithProviders<any> = RouterModule.forRoot(APP_ROUTES);

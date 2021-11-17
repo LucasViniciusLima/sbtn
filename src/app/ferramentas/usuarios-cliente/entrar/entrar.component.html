@@ -1,0 +1,22 @@
+<div class="py-5 bg-dark vh-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+
+                <img src="../../../../assets/swipe.svg" class="img-entrar" />
+            </div>
+            <div class="col-6">
+                <h2 class="text-white">Selecione o cliente para iniciar</h2>
+                <div class="input-group mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option *ngFor="let item of clients let i = index" value="index" > {{item?.name}} </option>                        
+                    </select>
+                    
+                </div>
+                <div class="btn btn-primary w-100">
+                    Confirmar
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
