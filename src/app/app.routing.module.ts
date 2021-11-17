@@ -1,4 +1,7 @@
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { AuthGuardService } from "./ferramentas/guards/auth.guard";
+
 import { ModuleWithProviders } from '@angular/core';
 
 import { SbtnHomeComponent } from './sbtn-home/sbtn-home.component';
@@ -13,10 +16,10 @@ import { EditarComponent } from './ferramentas/usuarios-cliente/editar/editar.co
 import { EntrarComponent } from './ferramentas/usuarios-cliente/entrar/entrar.component';
 import { ResultadoComponent } from './ferramentas/mapa-persona/resultado/resultado.component';
 
-const APP_ROUTES: Routes = [
+const appRoutes: Routes = [
     { path: '', component: SbtnHomeComponent },
     {
-        path: 'businessmodel', component: BusynessModelComponent,
+        path: 'businessmodel', component: BusynessModelComponent, canActivate: [AuthGuardService],
         children: [
             { path: '', component: HomeBusynessComponent },
             { path: 'editar', component: EditarItemBusynessComponent }
@@ -38,6 +41,10 @@ const APP_ROUTES: Routes = [
         ]
     },
     { path: 'usuario-entrar', component: EntrarComponent }
-];
+]
 
-export const routing: ModuleWithProviders<any> = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+    imports: [RouterModule.forRoot(appRoutes, { useHash: false })],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }

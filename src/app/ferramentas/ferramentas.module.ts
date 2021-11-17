@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { EditarItemBusynessComponent } from './busyness-model/editar-item-busyness/editar-item-busyness.component';
 import { HomeBusynessComponent } from './busyness-model/home/home.component';
 
-import { routing } from  '../app.routing';
 import { FormsModule } from '@angular/forms';
 import { MapaPersonaComponent } from './mapa-persona/mapa-persona.component';
 import { ResultadoComponent } from './mapa-persona/resultado/resultado.component';
 import { HomePersonaComponent } from './mapa-persona/home/home.component';
 import { AdmAtividadesComponent } from './adm-atividades/adm-atividades.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthGuardService } from './guards/auth.guard';
+import { AppRoutingModule } from '../app.routing.module';
+import { AuthService } from '../login/auth.service';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,11 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [ 
     CommonModule,
-    routing,
+    AppRoutingModule,
     FormsModule,
     BrowserModule,
     UsuariosClienteModule
-   ]
+   ],
+   providers: [AuthGuardService, AuthService]
 })
 export class FerramentasModule { }

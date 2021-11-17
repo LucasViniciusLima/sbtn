@@ -79,7 +79,8 @@ export class HomeBusynessComponent implements OnInit {
   ];
 
 
-  constructor(private router: Router, private store: StoreService) {    
+  constructor(private router: Router, private store: StoreService) {  
+      console.log(this.router.getCurrentNavigation().extras.state);
   }
 
   subItens: any;
