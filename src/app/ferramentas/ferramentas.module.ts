@@ -14,6 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AuthGuardService } from './guards/auth.guard';
 import { AppRoutingModule } from '../app.routing.module';
 import { AuthService } from '../login/auth.service';
+import { FerramentasComponent } from './ferramentas.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthService } from '../login/auth.service';
     ResultadoComponent,
     HomePersonaComponent,
     AdmAtividadesComponent,
+    FerramentasComponent,
   ],
   imports: [ 
     CommonModule,

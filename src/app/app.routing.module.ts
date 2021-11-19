@@ -15,6 +15,7 @@ import { VerTodosComponent } from './ferramentas/usuarios-cliente/ver-todos/ver-
 import { EditarComponent } from './ferramentas/usuarios-cliente/editar/editar.component';
 import { EntrarComponent } from './ferramentas/usuarios-cliente/entrar/entrar.component';
 import { ResultadoComponent } from './ferramentas/mapa-persona/resultado/resultado.component';
+import { FerramentasComponent } from "./ferramentas/ferramentas.component";
 
 const appRoutes: Routes = [
     { path: '', component: SbtnHomeComponent },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
             { path: 'resultado', component: ResultadoComponent }
         ]
     },
-    { path: 'usuario-entrar', component: EntrarComponent }
+    { path: 'usuario-entrar', component: EntrarComponent },
+    { path: 'ferramentas', component: FerramentasComponent}
 ]
 
 @NgModule({

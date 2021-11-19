@@ -11,8 +11,8 @@ export class AuthService {
 
   constructor(private route: Router) { }
 
-  fazerLogin(usuario: Usuario) {
-    if (usuario.email == 'lucaslimavzt@gmail.com' && usuario.senha == '123') {
+  fazerLogin(email: string, senha: string) {
+    if (email == 'lucaslimavzt@gmail.com' && senha == '123') {
       this.usuarioAutenticado = true;
       this.route.navigate(['/']);
     }
