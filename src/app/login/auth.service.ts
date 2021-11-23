@@ -11,10 +11,10 @@ export class AuthService {
 
   constructor(private route: Router) { }
 
-  fazerLogin(email: string, senha: string) {
+  fazerLogin(email: string, senha: string, destiny: string) {
     if (email == 'lucaslimavzt@gmail.com' && senha == '123') {
       this.usuarioAutenticado = true;
-      this.route.navigate(['/']);
+      this.route.navigateByUrl('/ferramentas/'+destiny);
     }
     else {
       this.usuarioAutenticado = false;

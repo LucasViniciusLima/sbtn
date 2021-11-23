@@ -2,8 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuardService } from "./ferramentas/guards/auth.guard";
 
-import { ModuleWithProviders } from '@angular/core';
-
 import { SbtnHomeComponent } from './sbtn-home/sbtn-home.component';
 import { BusynessModelComponent } from './ferramentas/busyness-model/busyness-model.component';
 import { EditarItemBusynessComponent } from './ferramentas/busyness-model/editar-item-busyness/editar-item-busyness.component';
@@ -16,33 +14,39 @@ import { EditarComponent } from './ferramentas/usuarios-cliente/editar/editar.co
 import { EntrarComponent } from './ferramentas/usuarios-cliente/entrar/entrar.component';
 import { ResultadoComponent } from './ferramentas/mapa-persona/resultado/resultado.component';
 import { FerramentasComponent } from "./ferramentas/ferramentas.component";
+import { MainmenuComponent } from "./ferramentas/mainmenu/mainmenu.component";
 
 const appRoutes: Routes = [
     { path: '', component: SbtnHomeComponent },
-    {
-        path: 'businessmodel', component: BusynessModelComponent, canActivate: [AuthGuardService],
-        children: [
-            { path: '', component: HomeBusynessComponent },
-            { path: 'editar', component: EditarItemBusynessComponent }
-        ]
-    },
-    {
-        path: 'admatividades',
-        children: [
-            { path: '', component: AdmAtividadesComponent },
-            { path: 'editar', component: EditarComponent }
-        ]
-    },
-    { path: 'admclientes', component: VerTodosComponent },
-    {
-        path: 'personamap', component: MapaPersonaComponent,
-        children: [
-            { path: '', component: HomePersonaComponent },
-            { path: 'resultado', component: ResultadoComponent }
-        ]
-    },
     { path: 'usuario-entrar', component: EntrarComponent },
-    { path: 'ferramentas', component: FerramentasComponent}
+    {
+        path: 'ferramentas', component: FerramentasComponent,
+        children: [
+            { path: '', component: MainmenuComponent },
+            {
+                path: 'businessmodel', component: BusynessModelComponent, canActivate: [AuthGuardService],
+                children: [
+                    { path: '', component: HomeBusynessComponent },
+                    { path: 'editar', component: EditarItemBusynessComponent }
+                ]
+            },
+            {
+                path: 'admatividades',
+                children: [
+                    { path: '', component: AdmAtividadesComponent },
+                    { path: 'editar', component: EditarComponent }
+                ]
+            },
+            { path: 'admclientes', component: VerTodosComponent },
+            {
+                path: 'personamap', component: MapaPersonaComponent,
+                children: [
+                    { path: '', component: HomePersonaComponent },
+                    { path: 'resultado', component: ResultadoComponent }
+                ]
+            },
+        ]
+    },
 ]
 
 @NgModule({

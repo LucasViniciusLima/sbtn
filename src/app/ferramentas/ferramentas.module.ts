@@ -15,6 +15,7 @@ import { AuthGuardService } from './guards/auth.guard';
 import { AppRoutingModule } from '../app.routing.module';
 import { AuthService } from '../login/auth.service';
 import { FerramentasComponent } from './ferramentas.component';
+import { MainmenuComponent } from './mainmenu/mainmenu.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FerramentasComponent } from './ferramentas.component';
     HomePersonaComponent,
     AdmAtividadesComponent,
     FerramentasComponent,
+    MainmenuComponent,
   ],
   imports: [ 
     CommonModule,

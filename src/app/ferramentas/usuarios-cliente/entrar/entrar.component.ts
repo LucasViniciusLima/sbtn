@@ -30,7 +30,7 @@ export class EntrarComponent implements OnInit {
 
   confirmar(select: number) {
     this.selectedClientId = this.clients[select]?.email;
-    //this.auth.fazerLogin(this.mainUserId,'123')//
+    this.auth.fazerLogin(this.mainUserId, '123', this.urlDestiny);
     //this.router.navigateByUrl('/'+this.urlDestiny);
   }
 }
