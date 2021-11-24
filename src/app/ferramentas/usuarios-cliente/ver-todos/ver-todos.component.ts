@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ClientService } from '../clients.service';
 
 @Component({
@@ -11,8 +12,11 @@ export class VerTodosComponent implements OnInit {
 
   user: any;
   clients: any;
+  userId: string;
 
-  constructor(private clientStore: ClientService) { }
+  constructor(private clientStore: ClientService, private route: Router) {
+    this.userId = this.route.getCurrentNavigation()?.extras.state?.email;
+  }
 
   ngOnInit(): void {
     this.clientStore.getUsers('lucaslimavzt@gmail.com').then((clientesDoc) => {
