@@ -11,9 +11,9 @@ import { ResultadoComponent } from './mapa-persona/resultado/resultado.component
 import { HomePersonaComponent } from './mapa-persona/home/home.component';
 import { AdmAtividadesComponent } from './adm-atividades/adm-atividades.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthGuardService } from './guards/auth.guard';
+import { AuthUserGuardService } from './guards/auth.guard';
 import { AppRoutingModule } from '../app.routing.module';
-import { AuthService } from '../login/auth.service';
+import { AuthService } from './guards/auth.service';
 import { FerramentasComponent } from './ferramentas.component';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
 
@@ -36,6 +36,6 @@ import { MainmenuComponent } from './mainmenu/mainmenu.component';
     BrowserModule,
     UsuariosClienteModule
    ],
-   providers: [AuthGuardService, AuthService]
+   providers: [AuthUserGuardService, AuthService]
 })
 export class FerramentasModule { }

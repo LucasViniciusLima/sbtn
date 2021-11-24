@@ -5,15 +5,14 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
   private usuarioAutenticado: boolean = false;
 
   constructor(private route: Router) { }
 
-  fazerLogin(email: string, senha: string) {
+  fazerLogin(email: string, senha: string, destiny: string) {
     if (email == 'lucaslimavzt@gmail.com' && senha == '123') {
       this.usuarioAutenticado = true;
-      this.route.navigateByUrl('/ferramentas');
+      this.route.navigateByUrl('/ferramentas/'+destiny);
     }
     else {
       this.usuarioAutenticado = false;
@@ -22,7 +21,5 @@ export class AuthService {
 
   usuarioEstaAutenticado() {
     return this.usuarioAutenticado;
-  }
-
-
+  }  
 }

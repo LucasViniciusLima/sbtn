@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AuthGuardService } from "./ferramentas/guards/auth.guard";
+import { AuthUserGuardService } from "./ferramentas/guards/auth.guard";
+import { AuthGuardService } from "./login/auth.guard";
 
 import { SbtnHomeComponent } from './sbtn-home/sbtn-home.component';
 import { BusynessModelComponent } from './ferramentas/busyness-model/busyness-model.component';
@@ -15,16 +16,18 @@ import { EntrarComponent } from './ferramentas/usuarios-cliente/entrar/entrar.co
 import { ResultadoComponent } from './ferramentas/mapa-persona/resultado/resultado.component';
 import { FerramentasComponent } from "./ferramentas/ferramentas.component";
 import { MainmenuComponent } from "./ferramentas/mainmenu/mainmenu.component";
+import { LoginComponent } from "./login/login.component";
 
 const appRoutes: Routes = [
     { path: '', component: SbtnHomeComponent },
     { path: 'usuario-entrar', component: EntrarComponent },
+    { path: 'login', component: LoginComponent },
     {
-        path: 'ferramentas', component: FerramentasComponent,
+        path: 'ferramentas', component: FerramentasComponent, canActivate: [AuthGuardService],
         children: [
             { path: '', component: MainmenuComponent },
             {
-                path: 'businessmodel', component: BusynessModelComponent, canActivate: [AuthGuardService],
+                path: 'businessmodel', component: BusynessModelComponent, canActivate: [AuthUserGuardService],
                 children: [
                     { path: '', component: HomeBusynessComponent },
                     { path: 'editar', component: EditarItemBusynessComponent }
