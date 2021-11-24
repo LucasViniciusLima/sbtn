@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { StoreService } from '../store.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,17 +8,25 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private usuarioAutenticado: boolean = false;
+  private user: any;
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private store: StoreService) { }
 
   fazerLogin(email: string, senha: string) {
-    if (email == 'lucaslimavzt@gmail.com' && senha == '123') {
-      this.usuarioAutenticado = true;
-      this.route.navigateByUrl('/ferramentas');
-    }
-    else {
-      this.usuarioAutenticado = false;
-    }
+    this.store.getUserData(email, 'users').then((doc: any) => {
+      if (doc?.password == senha) {
+        this.usuarioAutenticado = true;
+        this.route.navigateByUrl('/ferramentas', {
+          state: {
+            "email":email
+          }
+        });
+      } else {
+        this.usuarioAutenticado = false;
+      }
+    });
+
+
   }
 
   usuarioEstaAutenticado() {

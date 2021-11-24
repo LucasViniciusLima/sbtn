@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AppRoutingModule } from './app.routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app.routing.module';
     AppRoutingModule,
     CommonModule,
     FerramentasModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],

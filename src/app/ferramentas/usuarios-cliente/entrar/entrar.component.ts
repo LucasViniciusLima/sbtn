@@ -10,15 +10,16 @@ import { ClientService } from '../clients.service';
 })
 export class EntrarComponent implements OnInit {
 
-  mainUserId: string = 'lucaslimavzt@gmail.com';
-  user: any;//getId here
-  urlDestiny: string = 'businessmodel';
+  mainUserId: string = '';
+  user: any;
+  urlDestiny: string;
   clients: any;
   selectedClientId: any;
 
 
   constructor(private clientStore: ClientService, private router: Router, private auth: AuthService) {    
-        
+    this.mainUserId = router.getCurrentNavigation().extras.state?.email;
+    this.urlDestiny = router.getCurrentNavigation().extras.state?.destino;
   }
 
   ngOnInit(): void {
@@ -31,6 +32,5 @@ export class EntrarComponent implements OnInit {
   confirmar(select: number) {
     this.selectedClientId = this.clients[select]?.email;
     this.auth.fazerLogin(this.mainUserId, '123', this.urlDestiny);
-    //this.router.navigateByUrl('/'+this.urlDestiny);
   }
 }

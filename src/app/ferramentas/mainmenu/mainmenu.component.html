@@ -5,15 +5,27 @@
                 <h2 class="text-white">Ferramentas Movimento Transformacional</h2>
             </div>
             <div class="col-md-2">
-                <div class="p-2 bg-warning text-white mouseP" [routerLink]="['/ferramentas/admclientes']">Administrar clientes</div>
+                <div class="p-2 bg-warning text-white mouseP" [routerLink]="['/ferramentas/admclientes']">Administrar
+                    clientes</div>
             </div>
         </div>
-    </div>        
+    </div>
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-3"><div class="mouseP p-4 bg-secondary text-white" [routerLink]="['/ferramentas/personamap']">Mapa da Persona</div></div>
-            <div class="col-md-3"><div class="mouseP p-4 bg-secondary text-white" [routerLink]="['/ferramentas/businessmodel']">Modelo de Negócios</div></div>            
-            <div class="col-md-3"><div class="mouseP p-4 bg-secondary text-white" [routerLink]="['/ferramentas/admatividades']">Importante Urgente</div></div>
+            <div class="col-md-3">
+                <div class="mouseP p-4 bg-secondary text-white" [routerLink]="['/ferramentas/personamap']"
+                [state]="{email:email}">Mapa da
+                    Persona</div>
+            </div>
+            <div class="col-md-3">
+                <div class="mouseP p-4 bg-secondary text-white" [routerLink]="['/ferramentas/businessmodel']"
+                    [state]="{email:email}">Modelo de Negócios</div>
+            </div>
+            <div class="col-md-3">
+                <div class="mouseP p-4 bg-secondary text-white" [routerLink]="['/ferramentas/admatividades']"
+                [state]="{email:email}">Importante
+                    Urgente</div>
+            </div>
         </div>
     </div>
 </div>

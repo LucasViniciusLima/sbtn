@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'main-menu',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainmenuComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+
+  constructor(private route: Router) { 
+    this.email = this.route.getCurrentNavigation()?.extras?.state?.email;
+  }
 
   ngOnInit(): void {
   }

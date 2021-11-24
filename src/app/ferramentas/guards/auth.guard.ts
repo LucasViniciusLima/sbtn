@@ -7,16 +7,18 @@ import { AuthService } from 'src/app/ferramentas/guards/auth.service';
   providedIn: 'root'
 })
 export class AuthUserGuardService implements CanActivate {
-
-  constructor(private authService: AuthService, private router: Router) { }
+  email: string;
+    
+  constructor(private authService: AuthService, private router: Router) { 
+    this.email = this.router.getCurrentNavigation()?.extras?.state?.email;
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     if (this.authService.usuarioEstaAutenticado()) {
-      //this.router.navigateByUrl('/businessmodel');
       return true;
-    } else {
-      this.router.navigateByUrl('/usuario-entrar', {state: {  }});
-      return false
+    } else {      
+      this.router.navigateByUrl('/usuario-entrar',{state:{email: this.email, destino: route.url[0].path}});
+      return false;
     }
   }
 }

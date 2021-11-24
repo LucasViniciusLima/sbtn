@@ -8,11 +8,18 @@ import { AuthService } from './auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  email: string = '';
+  senha: string = '';
+
   constructor(private authService: AuthService) {
     
    }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.authService.fazerLogin(this.email, this.senha);
   }
 
 }
