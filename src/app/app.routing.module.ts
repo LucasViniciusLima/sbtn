@@ -17,10 +17,12 @@ import { ResultadoComponent } from './ferramentas/mapa-persona/resultado/resulta
 import { FerramentasComponent } from "./ferramentas/ferramentas.component";
 import { MainmenuComponent } from "./ferramentas/mainmenu/mainmenu.component";
 import { LoginComponent } from "./login/login.component";
+import { LancamentoSementeRedirectComponent } from "./utilities/lancamento-semente-redirect/lancamento-semente-redirect.component";
 
 const appRoutes: Routes = [
     { path: '', component: SbtnHomeComponent },
     { path: 'usuario-entrar', component: EntrarComponent },
+    { path: 'entrar-grupo', component: LancamentoSementeRedirectComponent },
     { path: 'login', component: LoginComponent },
     {
         path: 'ferramentas', component: FerramentasComponent, canActivate: [AuthGuardService],
